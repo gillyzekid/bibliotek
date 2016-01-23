@@ -1,0 +1,32 @@
+<template name="gbook">
+  <tr>
+    <td class="image">
+      {{#if thumb}}
+        <img src="{{thumb}}">
+      {{else}}
+        <img src="/img/genericbook-128.png">
+      {{/if}}
+    </td>
+    <td>
+      {{#if link}}
+        <a href="{{link}}" target="_blank">{{title}}</a>
+      {{else}}
+          <p>{{title}}</p>
+      {{/if}}
+      {{#if subtitle}}
+        <p>{{subtitle}}</p>
+      {{/if}}
+      <p>{{authors}}</p>
+      {{#if hasEditInfo}}
+        <p>{{editor}} {{#if edityear}}({{edityear}}){{/if}}</p>
+      {{/if}}
+      <p>ISBN : {{isbn}}</p>
+      {{#if pages}}
+        <p>{{pages}} pages</p>
+      {{/if}}
+    </td>
+    <td>
+      <input id="add" type="submit" value="Ajouter">
+    </td>
+  </tr>
+</template>

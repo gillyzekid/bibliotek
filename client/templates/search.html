@@ -1,0 +1,20 @@
+<template name="search">
+<h2>Recherche</h2>
+<form class="search" action="">
+    <input name="text" type="text" placeholder="Titre ou auteur">
+    <input id="submit" type="submit" value="Trouver">
+</form>
+<div>
+  {{#if Template.subscriptionsReady}}
+      {{#if gbooks.count}}
+      <table>
+        {{#each gbooks}}
+            {{> gbook}}
+        {{/each}}
+      </table>
+      {{/if}}
+  {{else}}
+    <p>Searching...</p>
+  {{/if}}
+</div>
+</template>

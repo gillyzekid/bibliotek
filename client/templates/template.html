@@ -1,0 +1,12 @@
+<template name="main">
+  <div class="login">{{> loginButtons align="right"}}</div>
+  <h1>Bibliotek</h1>
+  {{#if currentUser}}
+    {{> navbar}}
+    {{> yield}}
+  {{else}}
+    {{> welcome}}
+  {{/if}}
+  <hr />
+  <p>&copy; GZK 2016</p>
+</template>
